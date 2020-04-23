@@ -1,20 +1,20 @@
 import { createGlobalStyle } from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Karla|Lato');
+  @import url('https://fonts.googleapis.com/css?family=Karla|Roboto');
   :root {
-    --primary-color: rebeccapurple;
+    --primary-color: #b8221a;
     --white: #FFFAFF;
   }
   * {
     box-sizing: border-box;
   }
   html {
-    font-family: lato;
+    font-family: Roboto;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     touch-action: manipulation;
-    over-flow: hidden;
+    overflow: hidden;
   }
   body {
     margin: 0;
