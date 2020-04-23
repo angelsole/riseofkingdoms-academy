@@ -9,7 +9,7 @@ import Logo from '../logo';
 import NavBar from '../navBar';
 
 
-const DesktopHeader = ({ siteTitle, className }) => (
+const DesktopHeader = ({ siteTitle, className, menuOptions }) => (
   <header className={className}>
     <Container>
       <Grid
@@ -34,7 +34,7 @@ const DesktopHeader = ({ siteTitle, className }) => (
           </Link>
         </Grid>
         <Grid item sm={4}>
-          <NavBar />
+          <NavBar menuOptions={menuOptions} />
         </Grid>
       </Grid>
     </Container>
@@ -53,7 +53,6 @@ const StyledHeader = styled(DesktopHeader)`
   color: var(--primary-color);
   background: var(--white);
   padding: 1rem 0;
-  margin-bottom: 1rem;
   box-shadow: 0px 0.5px 5px 0px #f4f4f4;
   h1 {
     font-size: 1rem;

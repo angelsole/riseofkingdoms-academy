@@ -14,7 +14,7 @@ const NavBarContainer = styled.div`
   flex: 1;
 `
 
-const NavBar = () => (
+const NavBar = ({ menuOptions }) => (
   <NavBarContainer>
     <Grid
       container
@@ -22,15 +22,14 @@ const NavBar = () => (
       justify="flex-end"
       alignItems="center"
     >
-      <StyledLink to="/item1">
-        item 1
-      </StyledLink>
-      <StyledLink to="/item1">
-        item 2
-      </StyledLink>
-      <StyledLink to="/item1">
-        item 3
-      </StyledLink>
+      {menuOptions.map(({ id, name, url } )=> (
+        <StyledLink
+          key={id}
+          to={url}
+        >
+          {name}
+        </StyledLink>
+      ))}
     </Grid>
   </NavBarContainer>
 )

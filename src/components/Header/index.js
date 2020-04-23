@@ -12,8 +12,8 @@ const Header = ({ siteTitle }) => (
   <>
     <Hidden smDown>
       <DesktopHeader
-      siteTitle={siteTitle}
-      menuOptions={menuOptions}
+        siteTitle={siteTitle}
+        menuOptions={menuOptions}
       />
     </Hidden>
     <Hidden mdUp>

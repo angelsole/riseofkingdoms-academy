@@ -15,11 +15,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Logo from '../logo';
 
 const StyledMaterialTitle = styled(props => <Typography {...props} />)`
-  font-family: 'SpaceRanger' !important;
   font-size: 1rem !important;
-`;
-const StyledMaterialItem = styled(props => <ListItem {...props} />)`
-  font-family: 'SpaceRanger' !important;
 `;
 
 const MobileHeader = ({ menuOptions, siteTitle }) => {
@@ -30,7 +26,13 @@ const MobileHeader = ({ menuOptions, siteTitle }) => {
     setDrawer(!isOpenDrawer);
   }
   return (
-    <AppBar position="static">
+    <AppBar
+      position="static"
+      style={{
+        background: 'var(--white)',
+        color: 'var(--primary-color)'
+      }}
+    >
       <Toolbar>
         <Grid
             container
@@ -52,11 +54,11 @@ const MobileHeader = ({ menuOptions, siteTitle }) => {
           >
             <List>
               {menuOptions.map(({ id, name }) => (
-                <StyledMaterialItem
+                <ListItem
                   key={id}
                 >
                   {name}
-                </StyledMaterialItem>
+                </ListItem>
               ))}
             </List>
             </Drawer>
