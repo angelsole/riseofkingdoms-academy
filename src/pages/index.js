@@ -1,24 +1,37 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Grid } from '@material-ui/core';
+// import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import { Container } from "../components/layoutComponents"
 import SEO from "../components/seo"
 import Hero from '../components/Hero';
+// import Hotlink from '../components/Hotlink';
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="Rise of Kingdoms Academy" keywords={[`guías`, `tutoriales`, `rise of kingdoms`]} />
     <Hero />
     <Container>
-      <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
-      </div>
-      <Link to="/page-2/">Go to page 2</Link>
+      <Grid
+        container
+        spacing={1}
+        alignItems="center"
+      >
+        {/* <Hotlink /> */}
+        <div>
+          1
+        </div>
+        <div>
+          1
+        </div>
+        <div>
+          1
+        </div>
+        <div>
+          1
+        </div>
+      </Grid>
     </Container>
   </Layout>
 )

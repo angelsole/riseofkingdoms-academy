@@ -2,12 +2,12 @@ const menuOptions = [
   {
     id: 1,
     name: 'Item 1',
-    url: '/item1'
+    url: '/page-2'
   },
   {
     id: 2,
     name: 'Item 2',
-    url: '/item2'
+    url: '/404'
   },
   {
     id: 3,
