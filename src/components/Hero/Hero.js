@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
-import Button from '@material-ui/core/Button';
+import { Button, Grid } from '@material-ui/core';
 
 
 const Container = styled.div`
@@ -12,9 +12,11 @@ const Container = styled.div`
 
 const TextWrapper = styled.div`
   background: #0000007a;
+  display: flex;
+  flex-direction: column;
   height: 100%;
+  justify-content: center;
   left: 50%;
-  padding: 60vh 40px 0 40px;
   position: absolute;
   text-align: center;
   top: 50%;
@@ -33,6 +35,13 @@ const StyledButton = styled(props => <Button {...props} />)`
   color: white !important;
   border-color: white !important;
   margin-right: 10px;
+  margin-bottom: 20px;
+`
+
+const StyledImage = styled(props => <Img {...props} />)`
+  @media (max-width: 980px) {
+    height: 60vh;
+  }
 `
 
 const Hero = ({ className }) => (
@@ -50,12 +59,23 @@ const Hero = ({ className }) => (
             }
           }
         `}
-        render={data => <Img fluid={data.heroImage.childImageSharp.fluid} />}
+        render={data => <StyledImage fluid={data.heroImage.childImageSharp.fluid} />}
       />
       <TextWrapper>
-        <HeroTitle>Creado por y para jugadores</HeroTitle>
-        <StyledButton variant="outlined">Ver guías esenciales</StyledButton>
-        <StyledButton variant="outlined">Blog de novedades</StyledButton>
+        <Grid
+          container
+          spacing={1}
+          alignItems="center"
+          justify="center"
+        >
+          <Grid item sm={12}>
+            <HeroTitle>Creado por y para jugadores</HeroTitle>
+          </Grid>
+          <Grid item sm={12}>
+            <StyledButton variant="outlined">Ver guías esenciales</StyledButton>
+            <StyledButton variant="outlined">Blog de novedades</StyledButton>
+          </Grid>
+        </Grid>
       </TextWrapper>
     </Container>
   </section>
